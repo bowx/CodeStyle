@@ -9,6 +9,7 @@ This document may be read as a guide to writing robust and reliable programs. It
 2.1 C# Sourcefiles
 
 Keep your classes/files short, don't exceed 2000 LOC, divide your code up, make structures clearer. Put every class in a separate file and name the file like the class name (with .cs as extension of course). This convention makes things much easier.
+
 	>Bowen: LOC(line of code) is difficulty to control in some comlpex aspx.cs file
 
 2.2 Directory Layout
@@ -119,6 +120,7 @@ Do not put more than one variable or variables of different types on the same li
 		int a, b; //What is 'a'? What does 'b' stand for?
 
 The above example also demonstrates the drawbacks of non-obvious variable names. Be clear when naming variables.
+
 	>Bowen: This is encouraged not necessary. The major point is naming variables use clear and understandable word.
 
 5.2 Initialization
