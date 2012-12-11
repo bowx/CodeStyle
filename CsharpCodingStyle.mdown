@@ -10,7 +10,6 @@ This document may be read as a guide to writing robust and reliable programs. It
 
 Keep your classes/files short, don't exceed 2000 LOC, divide your code up, make structures clearer. Put every class in a separate file and name the file like the class name (with .cs as extension of course). This convention makes things much easier.
 
-	>Bowen: LOC(line of code) is difficulty to control in some comlpex aspx.cs file
 
 2.2 Directory Layout
 
@@ -121,7 +120,6 @@ Do not put more than one variable or variables of different types on the same li
 
 The above example also demonstrates the drawbacks of non-obvious variable names. Be clear when naming variables.
 
-	>Bowen: This is encouraged not necessary. The major point is naming variables use clear and understandable word.
 
 5.2 Initialization
 
@@ -183,24 +181,33 @@ use :
 if, if-else and if else-if else statements should look like this:
 
 
-		if (condition) {
+		if (condition) 
+		{
 			DoSomething();
 			...
 		}
-		if (condition) {
+		if (condition) 
+		{
 			DoSomething();
 			...
-		} else {
+		} 
+		else 
+		{
 			DoSomethingOther();
 			...
 		}
-		if (condition) {
+		if (condition) 
+		{
 			DoSomething();
 			...
-		} else if (condition) {
+		} 
+		else if (condition) 
+		{
 			DoSomethingOther();
 			...
-		} else {
+		} 
+		else 
+		{
 			DoSomethingOtherAgain();
 			...
 		}
@@ -209,7 +216,8 @@ if, if-else and if else-if else statements should look like this:
 
 A for statement shoud have following form :
 
-		for (int i = 0; i < 5; ++i) {
+		for (int i = 0; i < 5; ++i) 
+		{
 			...
 		}
 		
@@ -219,7 +227,8 @@ or single lined (consider using a while statement instead) :
 		
 A foreach should look like :
 
-		foreach (int i in IntList) {
+		foreach (int i in IntList) 
+		{
 			...
 		}
 		
@@ -229,7 +238,8 @@ Note: Generally use brackets even if there is only one statement in the loop.
 
 A while statement should be written as follows:
 
-		while (condition) {
+		while (condition) 
+		{
 			...
 		}
 
@@ -239,15 +249,18 @@ An empty while should have the following form:
 
 A do-while statement should have the following form:
 
-		do {
+		do 
+		{
 			...
-		} while (condition);
+		} 
+		while (condition);
 		
 6.6 Switch Statements
 
 A switch statement should be of following form:
 
-		switch (condition) {
+		switch (condition) 
+		{
 			case A:
 			...
 			break;
@@ -263,38 +276,34 @@ A switch statement should be of following form:
 
 A try-catch statement should follow this form:
 
-		try {
+		try 
+		{
 			...
-		} catch (Exception) {}
+		} 
+		catch (Exception) {}
 		or
-		try {
+		try 
+		{
 			...
-		} catch (Exception e) {
+		} 
+		catch (Exception e) 
+		{
 			...
 		}
 		or
-		try {
+		try 
+		{
 			...
-		} catch (Exception e) {
+		} 
+		catch (Exception e) 
+		{
 			...
-		} finally {
+		} 
+		finally 
+		{
 			...
 		}
 		
-.
-	>Bowen: I think the most popular style for c# about above statements is put every braces in a new line, such as:
-	
-			if(condition)
-			{
-				...
-			}
-			else
-			{
-				...
-			}
-			
-.
-	>And most code snippets(such as in MSDN) are using that style.
 		
 		
 #### 7. White Space
@@ -475,26 +484,33 @@ Don’t use magic numbers, i.e. place constant numerical values directly into th
 
 	namespace ShowMeTheBracket
 	{
-		public enum Test {
+		public enum Test 
+		{
 			TestMe,
 			TestYou
 		}
 		public class TestMeClass
 		{
 			Test test;
-			public Test Test {
-				get {
+			public Test Test 
+			{
+				get 
+				{
 					return test;
 				}
-				set {
+				set 
+				{
 					test = value;
 				}
 			}
 			void DoSomething()
 			{
-				if (test == Test.TestMe) {
+				if (test == Test.TestMe) 
+				{
 					//...stuff gets done
-				} else {
+				} 
+				else 
+				{
 					//...other stuff gets done
 				}
 			}
@@ -510,18 +526,23 @@ Brackets should begin on a new line only after:
 
 instead of :
 
-		for (int i = 1; i < num; ++i) {
+		for (int i = 1; i < num; ++i) 
+		{
 			meetsCriteria[i] = true;
 		}
-		for (int i = 2; i < num / 2; ++i) {
+		for (int i = 2; i < num / 2; ++i) 
+		{
 			int j = i + i;
-			while (j <= num) {
+			while (j <= num) 
+			{
 				meetsCriteria[j] = false;
 				j += i;
 			}
 		}
-		for (int i = 0; i < num; ++i) {
-			if (meetsCriteria[i]) {
+		for (int i = 0; i < num; ++i) 
+		{
+			if (meetsCriteria[i]) 
+			{
 				Console.WriteLine(i + " meets criteria");
 			}
 		}
@@ -530,16 +551,19 @@ instead of :
 		{
 			isPrime[primeCandidate] = true;
 		}
-		for (int factor = 2; factor < num / 2; ++factor) {
+		for (int factor = 2; factor < num / 2; ++factor) 
+		{
 			int factorableNumber = factor + factor;
-			while (factorableNumber <= num) {
+			while (factorableNumber <= num) 
+			{
 				isPrime[factorableNumber] = false;
 				factorableNumber += factor;
 			}
 		}
 		for (int primeCandidate = 0; primeCandidate < num; ++primeCandidate)
 		{
-			if (isPrime[primeCandidate]) {
+			if (isPrime[primeCandidate]) 
+			{
 				Console.WriteLine(primeCandidate + " is prime.");
 			}
 		}
@@ -547,6 +571,6 @@ instead of :
 Note: Indexer variables generally should be called i, j, k etc. But in cases like this, it may make sense to reconsider this rule. In general, when the same counters or indexers are reused, give them meaningful names.
 
 .
-	>Bowen: There is a other guide in [MSDN](http://msdn.microsoft.com/zh-cn/library/czefa0ke.aspx).
+	> There is a other guide in [MSDN](http://msdn.microsoft.com/zh-cn/library/czefa0ke.aspx).
 	
 >Sourse: [http://www.csharpfriends.com/articles/getarticle.aspx?articleid=336](http://www.csharpfriends.com/articles/getarticle.aspx?articleid=336)
